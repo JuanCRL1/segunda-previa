@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <script > //SUMATORIA
+function sumatoria (num){
+  if(num == 0){
+    return 0;
+  }
+  else{
+    return num+sumatoria(num-1);
+  }
+}
+document.write ("SUMATORIA= ")
+document.write (sumatoria (10)+ "<br><br>");
+
+function texto(cadena){
+  document.write(cadena);
+}
+function salto (numero){
+  for (let i=0;i<numero;i++){
+    document.write("<br><br>");
+  }
+}
+
+//SUMATORIA ITERATIVA TRANSCRIPCIÓN
+const nums=[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+let acc=0;
+for (let i=0 ;i<nums.length;i++){
+  acc+=nums[i];
+}
+texto ("Sumatoria elementos de la lista-ITERATIVO= "+ acc + "<br><br>");
+
+//SUMATORIA RECURSIVA TRANSCRIPCIÓN
+function sumatoria2 (nums){
+  if (nums==0){
+    return 0;
+  }
+  else{
+    const [first,...rest]=nums;
+    return first+sumatoria2(rest);
+  }
+}
+respuesta=sumatoria2([0, 1, 2, 3, 4, 5, 6, 7, 8, 9]);
+texto ("sumatoria elementos lista-RECURSIVO "+ respuesta+"<br><br>")
+ 
+//MOSTRAR ELEMENTOS DE UNA LISTA
+function mostrar(nums){
+  if(nums.length==0){
+    return 0;
+  }
+  else{
+    const[first,...rest]=nums;
+    document.write(first);
+    mostrar(rest);
+  }
+}
+lista =[0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+mostrar(lista);
+document.write("<br><br>");
+
+//BUSCAR DATO DE UNA LISTA
+function buscar (dato,lista){
+  if(lista.length==0){
+    return false;
+  }
+    else{
+      const[first,...rest]=lista;
+      if(first==dato)
+        return true;
+      else
+        return buscar(dato,rest);
+    }
+}
+</script>
+  </body>
+</html>
